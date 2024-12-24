@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './Header.module.scss'; // Импортируем стили для Header
-import GlitchButton from '../glitchButton/GlitchButton'; // Импортируем GlitchButton
+import styles from './Header.module.scss';
+import GlitchButton from '../glitchButton/GlitchButton';
 
 const Header: React.FC = () => {
     return (

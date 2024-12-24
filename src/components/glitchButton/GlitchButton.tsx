@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './GlitchButton.module.scss'; // Импортируем стили
+import styles from './GlitchButton.module.scss';
 
 interface GlitchButtonProps {
     text: string; // Текст кнопки

@@ -7,36 +7,36 @@
   gap: 30px;
   background: url("../../images/header/header.png") center / cover no-repeat;
   z-index: 1000;
+}
 
-  .logo {
-    display: flex;
-    flex-direction: column;
-    color: black;
-    align-items: center;
-    gap: 10px;
-    grid-column: 2 / 3;
-    justify-self: center;
-    align-self: center;
-  }
+.logo {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  align-items: center;
+  gap: 10px;
+  grid-column: 2 / 3;
+  justify-self: center;
+  align-self: center;
+}
 
-  .logoTitle {
-    font-family: LYAJKA, Arial, sans-serif;
-    font-size: 6vw;
-  }
+.logoTitle {
+  font-family: LYAJKA, Arial, sans-serif;
+  font-size: 6.5vw;
+}
 
-  .logoText {
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 2.5vw;
-  }
+.logoText {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 2.5vw;
+}
 
-  .color {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    grid-column: 3 / 4;
-    justify-self: flex-end;
-  }
+.color {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  grid-column: 3 / 4;
+  justify-self: flex-end;
 }
 
 @media (width <= 1080px) {
@@ -47,21 +47,40 @@
     gap: 30px;
   }
 
-  .color {
-    flex-direction: row;
+  .logoTitle {
+    font-size: 9vw;
   }
 
   .logoText {
     font-size: 3.5vw;
   }
 
-  .logoTitle {
-    font-size: 10vw;
+  .color {
+    flex-direction: row;
   }
 }
 
 @media (width <= 680px) {
   .header {
     padding: 15px 2rem;
+  }
+}
+
+@media (width <= 520px) {
+  .header {
+    gap: 15px;
+    padding: 1rem;
+  }
+
+  .logo {
+    gap: 5px;
+  }
+
+  .logoTitle {
+    font-size: 9vw;
+  }
+
+  .logoText {
+    font-size: 3vw;
   }
 }

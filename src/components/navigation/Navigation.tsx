@@ -1,15 +1,12 @@
 import React from 'react';
-import styles from './Navigation.module.scss'; // Импортируем стили
+import styles from './Navigation.module.scss';
+import NavButton from '../nav-button/NavButton';
 
 const Navigation: React.FC = () => {
     return (
         <nav className={styles.navigation}>
-            <button className={`${styles.navigation__button} ${styles.button}`} data-href="index.html">
-                Гудвайбсы
-            </button>
-            <button className={`${styles.navigation__button} ${styles.button}`} data-href="guides.html">
-                Гайды
-            </button>
+            <NavButton text="Гудвайбсы" href="index.html" />
+            <NavButton text="Гайды" href="guides.html" />
         </nav>
     );
 };

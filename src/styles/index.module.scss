@@ -37,11 +37,7 @@ main:after {
   gap: 30px;
 }
 
-.gallery {
-  height: 2000px; /* тест */
-}
-
-@media (width <= 1050px) {
+@media (width <= 1080px) {
   main {
     padding-top: 40px;
   }

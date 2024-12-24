@@ -7,10 +7,10 @@ import Header from "../header/Header";
 
 export const App: React.FC = () => {
     return (
-        <div className={styles.page}> {/* Используем стили для .page */}
+        <div className={styles.page}>
             <Header />
             <Navigation />
-            <main className={styles.container}> {/* Используем стили для .container */}
+            <main className={styles.container}>
             </main>
             <Footer/>
         </div>

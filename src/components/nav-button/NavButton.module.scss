@@ -1,0 +1,27 @@
+.navButton {
+  text-transform: uppercase;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  min-height: inherit;
+  min-width: 150px;
+  color: white;
+}
+
+.navButton:active {
+  border-left: 3px solid lightgray;
+  border-right: 3px solid lightgray;
+}
+
+@media (width <= 680px) {
+ .navButton {
+    font-size: 18px;
+    min-width: 130px;
+  }
+}
+
+@media (width <= 520px) {
+  .navButton {
+    font-size: 16px;
+    min-width: 110px;
+  }
+}
