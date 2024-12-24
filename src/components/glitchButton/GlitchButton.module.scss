@@ -1,0 +1,103 @@
+@use '../../styles/variables' as *;
+@use '../../styles/animations' as *;
+
+.menuButton {
+  font-family: $font-button;
+  color: black;
+  text-transform: uppercase;
+  font-size: 24px;
+  position: relative;
+  font-weight: 700;
+  border: 0;
+  width: 250px;
+  height: 75px;
+  line-height: 55px;
+  z-index: 1;
+
+  &:hover .glitch {
+    display: block;
+  }
+
+  &:active {
+    top: calc($border * 1);
+    left: calc($border * 1);
+    right: calc($border * 1);
+    bottom: calc($border * 1);
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    clip-path: $clip;
+    z-index: -1;
+  }
+
+  &:before {
+    background: $shadow-primary;
+    transform: translate($border, 0);
+  }
+
+  &:after {
+    background: $primary;
+  }
+}
+
+.tag {
+  position: absolute;
+  padding: 2px 1px;
+  letter-spacing: 1px;
+  line-height: 1;
+  bottom: -5%;
+  right: 5%;
+  color: black;
+  font-size: 7px;
+}
+
+.glitch {
+  position: absolute;
+  top: calc($border * -1);
+  left: calc($border * -1);
+  right: calc($border * -1);
+  bottom: calc($border * -1);
+  background: $shadow-primary;
+  text-shadow: 2px 2px $shadow-primary, -2px -2px $shadow-secondary;
+  clip-path: $clip;
+  animation: glitch 2s infinite;
+  display: none;
+}
+
+.glitch:before {
+  content: '';
+  position: absolute;
+  top: calc($border * 1);
+  right: calc($border * 1);
+  bottom: calc($border * 1);
+  left: calc($border * 1);
+  clip-path: $clip;
+  background: $primary;
+  z-index: -1;
+}
+
+@media (width <= 680px) {
+  .menuButton {
+    width: 150px;
+    height: 55px;
+  }
+
+  .tag {
+    display: none;
+  }
+}
+
+@media (width <= 520px) {
+  .menuButton {
+    width: 110px;
+    height: 50px;
+    font-size: 18px;
+  }
+}

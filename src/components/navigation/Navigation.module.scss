@@ -1,0 +1,24 @@
+.navigation {
+  min-width: inherit;
+  width: 100%;
+  background: black;
+  border: 1px solid white;
+  border-left: 0;
+  min-height: 60px;
+  font-size: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+@media (width <= 680px) {
+  .navigation {
+    min-height: 50px;
+  }
+}
+
+@media (width <= 520px) {
+  .navigation {
+    min-height: 44px;
+  }
+}

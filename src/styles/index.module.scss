@@ -1,0 +1,53 @@
+main {
+  background: black;
+  max-width: inherit;
+  width: 100%;
+  position: relative;
+  padding: 120px 2rem 100px;
+  z-index: 999;
+}
+
+main:before,
+main:after {
+  content: "";
+  display: block;
+  left: 0;
+  width: 100%;
+  background: #f9f002;
+  position: absolute;
+}
+
+main:before {
+  top: 39px;
+  height: 90px;
+  clip-path: polygon(24.8% 0, 26.5% 15px, 34% 15px, 35.5% 0, 70% 0);
+  z-index: 10;
+}
+
+main:after {
+  top: 0;
+  height: 40px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.gallery {
+  height: 2000px; /* тест */
+}
+
+@media (width <= 1050px) {
+  main {
+    padding-top: 40px;
+  }
+
+  main:before,
+  main:after {
+    display: none;
+  }
+}

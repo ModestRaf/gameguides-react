@@ -1,0 +1,53 @@
+@use 'variables' as *;
+
+@keyframes glitch {
+  0% {
+    clip-path: $clip-one;
+  }
+  2%, 8% {
+    clip-path: $clip-two;
+    transform: translate(calc($shimmy-distance * -1%), 0);
+  }
+  6% {
+    clip-path: $clip-two;
+    transform: translate(calc($shimmy-distance * 1%), 0);
+  }
+  9% {
+    clip-path: $clip-two;
+    transform: translate(0, 0);
+  }
+  10% {
+    clip-path: $clip-three;
+    transform: translate(calc($shimmy-distance * 1%), 0);
+  }
+  13% {
+    clip-path: $clip-three;
+    transform: translate(0, 0);
+  }
+  14%, 21% {
+    clip-path: $clip-four;
+    transform: translate(calc($shimmy-distance * 1%), 0);
+  }
+  25% {
+    clip-path: $clip-five;
+    transform: translate(calc($shimmy-distance * 1%), 0);
+  }
+  31%, 61%, 100% {
+    clip-path: $clip-four;
+  }
+}
+
+@keyframes buttonhover {
+  0% {
+    transform: skew(0deg);
+  }
+  5% {
+    transform: skew(10deg);
+  }
+  10% {
+    transform: skew(0deg);
+  }
+  100% {
+    transform: skew(0deg);
+  }
+}

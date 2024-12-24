@@ -1,0 +1,52 @@
+@use '../fonts/fonts.scss';
+
+body {
+  font-family: Blender, Arial, sans-serif;
+  color: #d5d5d5;
+  background: linear-gradient(135deg, #23272a, #0c0f12);
+  background-size: 10px 10px;
+  background-color: #060c14;
+  margin: 0 auto;
+  max-width: 1600px;
+  width: 100%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+main {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
