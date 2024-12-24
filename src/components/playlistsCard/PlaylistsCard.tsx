@@ -1,13 +1,22 @@
 import React from 'react';
-import styles from './PlaylistsCard.module.scss'; // Импортируем стили
+import styles from '../playlistsCard/PlaylistsCard.module.scss';
 
-const PlaylistsCard: React.FC = () => {
+interface PlaylistCardProps {
+    title: string; // Заголовок карточки
+    imageUrl: string; // URL изображения
+    onClick: () => void; // Обработчик клика
+}
+
+const PlaylistCard: React.FC<PlaylistCardProps> = ({ title, imageUrl, onClick }) => {
     return (
-        <div className={styles.playlistsCard}>
-            <div className={styles.playlistsCardImage} />
-            <h3 className={styles.playlistsCardTitle}>Название плейлиста</h3>
+        <div className={styles.card} onClick={onClick}>
+            <div
+                className={styles.image}
+                style={{ backgroundImage: `url(${imageUrl})` }}
+            />
+            <h3 className={styles.title}>{title}</h3>
         </div>
     );
 };
 
-export default PlaylistsCard;
+export default PlaylistCard;

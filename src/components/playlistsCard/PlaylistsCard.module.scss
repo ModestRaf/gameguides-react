@@ -1,6 +1,6 @@
 @use '../../styles/animations' as *;
 
-.playlists-card {
+.card {
   padding: 30px 5px 15px;
   clip-path: polygon(0px 25px, 26px 0px, calc(60% - 25px) 0px, 60% 25px, 100% 25px, 100% calc(100% - 10px), calc(100% - 15px) calc(100% - 10px), calc(80% - 10px)  calc(100% - 10px), calc(80% - 15px) calc(100% - 0px), 10px  calc(100% - 0px), 0% calc(100% - 10px));
   background-color: #f9f002;
@@ -11,16 +11,16 @@
   flex-direction: column;
 }
 
-.playlists-card:hover {
+.card:hover {
   animation: buttonhover 2.5s linear infinite;
 }
 
-.playlists-card-title {
+.title {
   color: black;
   font-size: 24px;
 }
 
-.playlists-card-image {
+.image {
   width: 100%;
   height: 100%;
   background: center / cover;
