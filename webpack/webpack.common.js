@@ -2,6 +2,7 @@ const HTMLWebpackPlugins = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const webpack = require('webpack'); //подключаем webpack для использования встроенного плагина EnvironmentPlugin
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 //в зависимости от того, какой скрипт мы запустили
 // переменная production получит либо false, либо true
@@ -14,7 +15,7 @@ module.exports = {
         filename: production
             ? 'static/scripts/[name].[contenthash].js'// добавляем хеш к имени файла, если запускаем в режиме production
             : 'static/scripts/[name].js',
-        publicPath: '/',
+        publicPath: production ? '/gameguides-react/' : '/',
         clean: true,
     },
     module: {
@@ -29,10 +30,10 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.(png|jpg|gif|webp)$/,
+                test: /\.(png|jpg|gif|webp|ico)$/,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'static/images/[hash][ext][query]',
+                    filename: 'static/images/[name][ext]',
                 },
             },
             {
@@ -81,6 +82,7 @@ module.exports = {
     plugins: [
         new HTMLWebpackPlugins({
             template: path.resolve(__dirname, '..', './public/index.html'), //путь до папки public изменился
+            favicon: path.resolve(__dirname, '..', './src/images/favicon.ico'),
         }),
         new MiniCssExtractPlugin({
             filename: 'static/styles/[name].[contenthash].css'
@@ -88,6 +90,14 @@ module.exports = {
         //Плагин позволяет установить переменные окружения, можно переопределить переменную из блока script файла package.json
         new webpack.EnvironmentPlugin({
             NODE_ENV: 'development', // значение по умолчанию 'development', если переменная process.env.NODE_ENV не передана при вызове сборки
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, '..', './src/images/favicon.ico'),
+                    to: './favicon.ico', // Указываем путь в папке dist
+                },
+            ],
         }),
     ],
 };
