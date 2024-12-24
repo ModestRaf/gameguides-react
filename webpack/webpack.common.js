@@ -1,19 +1,17 @@
 const HTMLWebpackPlugins = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-const webpack = require('webpack'); //подключаем webpack для использования встроенного плагина EnvironmentPlugin
+const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-//в зависимости от того, какой скрипт мы запустили
-// переменная production получит либо false, либо true
 const production = process.env.NODE_ENV === 'production';
 
 module.exports = {
-    entry: path.resolve(__dirname, '..', './src/index.tsx'),//путь до папки src изменился
+    entry: path.resolve(__dirname, '..', './src/index.tsx'),
     output: {
-        path: path.resolve(__dirname, '..', './dist'), //путь до папки dist изменился
+        path: path.resolve(__dirname, '..', './dist'),
         filename: production
-            ? 'static/scripts/[name].[contenthash].js'// добавляем хеш к имени файла, если запускаем в режиме production
+            ? 'static/scripts/[name].[contenthash].js'
             : 'static/scripts/[name].js',
         publicPath: production ? '/gameguides-react/' : '/',
         clean: true,
@@ -81,7 +79,7 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugins({
-            template: path.resolve(__dirname, '..', './public/index.html'), //путь до папки public изменился
+            template: path.resolve(__dirname, '..', './public/index.html'),
             favicon: path.resolve(__dirname, '..', './src/images/favicon.ico'),
         }),
         new MiniCssExtractPlugin({
