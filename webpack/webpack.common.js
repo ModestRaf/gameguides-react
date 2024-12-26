@@ -49,7 +49,6 @@ module.exports = {
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
-                    //в режиме production создаём физический файл в папке dist, в dev режиме добавляем стили в тег style в html-файле
                     production ? MiniCssExtractPlugin.loader : 'style-loader',
                     {
                         loader: 'css-loader',
@@ -93,7 +92,7 @@ module.exports = {
             patterns: [
                 {
                     from: path.resolve(__dirname, '..', './src/images/favicon.ico'),
-                    to: './favicon.ico', // Указываем путь в папке dist
+                    to: './favicon.ico',
                 },
             ],
         }),

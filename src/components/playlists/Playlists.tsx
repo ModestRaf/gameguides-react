@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Playlists.module.scss';
-import PlaylistCard from '../playlistsCard/PlaylistsCard';
+import PlaylistCard from '../card/PlaylistsCard';
 import VideoPlayer from '../videoPlayer/VideoPlayer';
 import { cardsData, GoodvibesIds, LaughtCryIds } from '../../data';
 

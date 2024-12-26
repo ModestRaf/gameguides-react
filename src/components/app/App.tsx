@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import styles from '../../styles/index.module.scss';
 import Footer from "../footer/Footer";
 import Navigation from "../navigation/Navigation";
@@ -49,12 +49,12 @@ const HomePage: React.FC = () => {
 
 export const App: React.FC = () => {
     return (
-        <BrowserRouter>
+        <Router>
             <Routes>
-                <Route path="/" element={<HomePage />} />
+                <Route path="" element={<HomePage />} />
                 <Route path="/guides" element={<Guides />} />
             </Routes>
-        </BrowserRouter>
+        </Router>
     );
 };
 
