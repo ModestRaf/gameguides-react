@@ -4,7 +4,7 @@ import styles from './Navigation.module.scss';
 import NavButton from '../nav-button/NavButton';
 
 interface NavigationProps {
-    onGoodvibesClick?: () => void; // Обработчик клика для кнопки "Гудвайбсы" (теперь опциональный)
+    onGoodvibesClick?: () => void;
 }
 
 const Navigation: React.FC<NavigationProps> = ({ onGoodvibesClick }) => {
@@ -24,13 +24,13 @@ const Navigation: React.FC<NavigationProps> = ({ onGoodvibesClick }) => {
             {/* Кнопка "Гудвайбсы" */}
             <NavButton
                 text="Гудвайбсы"
-                onClick={handleGoodvibesClick} // Используем handleGoodvibesClick
+                onClick={handleGoodvibesClick}
             />
 
             {/* Кнопка "Гайды" */}
             <NavButton
                 text="Гайды"
-                onClick={() => navigate('/guides')} // Навигация при клике
+                onClick={() => navigate('/guides')}
             />
         </nav>
     );

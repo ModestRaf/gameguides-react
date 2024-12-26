@@ -3,7 +3,7 @@ import styles from './NavButton.module.scss'; // Импортируем стил
 
 interface NavButtonProps {
     text: string; // Текст кнопки
-    onClick?: () => void; // Обработчик клика (теперь опциональный)
+    onClick?: () => void;
 }
 
 const NavButton: React.FC<NavButtonProps> = ({ text, onClick }) => {

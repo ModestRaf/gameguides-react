@@ -2,9 +2,9 @@ import React from 'react';
 import styles from '../playlistsCard/PlaylistsCard.module.scss';
 
 interface PlaylistCardProps {
-    title: string; // Заголовок карточки
-    imageUrl: string; // URL изображения
-    onClick: () => void; // Обработчик клика
+    title: string;
+    imageUrl: string;
+    onClick: () => void;
 }
 
 const PlaylistCard: React.FC<PlaylistCardProps> = ({ title, imageUrl, onClick }) => {
