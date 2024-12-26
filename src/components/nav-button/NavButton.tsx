@@ -3,14 +3,14 @@ import styles from './NavButton.module.scss'; // Импортируем стил
 
 interface NavButtonProps {
     text: string; // Текст кнопки
-    onClick: () => void; // Обработчик клика
+    onClick?: () => void; // Обработчик клика (теперь опциональный)
 }
 
 const NavButton: React.FC<NavButtonProps> = ({ text, onClick }) => {
     return (
         <button
-            className={`${styles.navButton} ${styles.button}`}
-            onClick={onClick} // Добавляем обработчик клика
+            className={styles.navButton}
+            onClick={onClick}
         >
             {text}
         </button>
