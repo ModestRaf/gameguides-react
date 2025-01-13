@@ -3,8 +3,7 @@ main {
   max-width: inherit;
   width: 100%;
   position: relative;
-  padding: 120px 2rem 100px;
-  z-index: 999;
+  padding: 130px 2rem 130px;
 }
 
 main:before,
@@ -22,6 +21,14 @@ main:before {
   height: 90px;
   clip-path: polygon(24.8% 0, 26.5% 15px, 34% 15px, 35.5% 0, 70% 0);
   z-index: 10;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 
 main:after {
