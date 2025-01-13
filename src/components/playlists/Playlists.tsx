@@ -9,9 +9,11 @@ const Playlists: React.FC = () => {
 
     const handleCardClick = (index: number) => {
         if (index === 0) {
-            navigate('/video-goodvibes');
+            navigate('/goodvibes');
         } else if (index === 1) {
-            navigate('/video-lcr');
+            navigate('/other');
+        } else if (index === 2) {
+            navigate('/genshin');
         } else {
             console.warn('Функция для этого плейлиста еще не реализована');
         }

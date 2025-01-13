@@ -9,11 +9,13 @@ const Gamelists: React.FC = () => {
 
     const handleCardClick = (index: number) => {
         if (index === 0) {
-            navigate('/video-goodvibes');
+            navigate('/masseffect');
         } else if (index === 1) {
-            navigate('/video-lcr');
+            navigate('/dragonage');
+        } else if (index === 2) {
+            navigate('/longdark');
         } else {
-            console.warn('Функция для этого плейлиста еще не реализована');
+            console.warn('Функция для этого списка еще не реализована');
         }
     };
 

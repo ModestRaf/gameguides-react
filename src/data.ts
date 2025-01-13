@@ -12,12 +12,35 @@ export const GoodvibesIds = [
     '8Tja4a4y4fk'
 ];
 
-export const LaughtCryIds = [
+export const OtherIds = [
     'eWzOGm241po',
     'fCcjngycS68',
     '_nKDRXcj3Xk',
+    'ykSpvHA3b6o',
     '5Ktgnj98OpM',
-    'u3PpfNJv9K8'
+    'u3PpfNJv9K8',
+];
+
+export const GenshinIds = [
+    '9H9dMYOLvio',
+    'LouznAaioKI',
+    'rzHC71iPLUM',
+    'CaPZ0Q_zJMA',
+    'HoU608ATfuU',
+    'vm0GYyaTfaE',
+    'iEZC0M46z7g',
+    '7MGnE2fjGSI',
+    'KoCpFQLKm2A',
+    'CmNr_qr03Go',
+    'xfEvWGTM-CQ',
+    'j6PJpbTTL5Y',
+    'fgNfhFKvX0I',
+    '2SoOLeiKmuE',
+    'aVuEEkQ-DGY',
+    'ZK5HcHGRXJE',
+    'ommQJGzRgLk',
+    'bWJ3DFFlJy0',
+    'LHQWO4SXKUI', //нахида, а там еще 25 ааааа...
 ];
 
 export interface CardData {
