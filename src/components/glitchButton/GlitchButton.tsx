@@ -2,20 +2,21 @@ import React from 'react';
 import styles from './GlitchButton.module.scss';
 
 interface GlitchButtonProps {
-    text: string; // Текст кнопки
-    className?: string; // Дополнительный класс для стилизации
+    text: string;
+    className?: string;
+    onClick?: () => void;
 }
 
-const GlitchButton: React.FC<GlitchButtonProps> = ({ text, className }) => {
+const GlitchButton: React.FC<GlitchButtonProps> = ({ text, className, onClick }) => {
     return (
-        <button className={`${styles.menuButton} ${className}`}>
+        <button className={`${styles.menuButton} ${className}`} onClick={onClick}>
             {text}
             <span className={styles.glitch} aria-hidden="true">
-        {text}
-      </span>
+                {text}
+            </span>
             <span className={styles.tag} aria-hidden="true">
-        R25
-      </span>
+                R25
+            </span>
         </button>
     );
 };

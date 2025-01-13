@@ -4,7 +4,7 @@ import styles from './Navigation.module.scss';
 import NavButton from '../nav-button/NavButton';
 
 const Navigation: React.FC = () => {
-    const navigate = useNavigate(); // Хук для навигации
+    const navigate = useNavigate();
 
     return (
         <nav className={styles.navigation}>

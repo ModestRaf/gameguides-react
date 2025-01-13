@@ -1,5 +1,18 @@
+// Цвета для светлой темы
+$light-background: #f9f002;
+$light-text: #000000;
+$light-accent: #000000;
+$light-card-text: #ffffff;
+
+// Цвета для тёмной темы (по умолчанию)
+$dark-background: #000000;
+$dark-text: #ffffff;
+$dark-accent: #f9f002;
+$dark-card-text: #000000;
+$dark-title: #f9f002;
+
+// Основные переменные
 $primary: #60d5ed;
-$shadow-primary: black;
 $shadow-secondary: (60, 90%, 60%);
 $clip: polygon(0 0, 100% 0, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 70%);
 $border: 4px;

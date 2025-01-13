@@ -1,26 +1,35 @@
+@use './variables' as *;
+
+// Стили по умолчанию (тёмная тема)
 main {
-  background: black;
+  background: $dark-background;
+  color: $dark-text;
   max-width: inherit;
   width: 100%;
   position: relative;
   padding: 130px 2rem 130px;
-}
 
-main:before,
-main:after {
-  content: "";
-  display: block;
-  left: 0;
-  width: 100%;
-  background: #f9f002;
-  position: absolute;
-}
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    left: 0;
+    width: 100%;
+    background: $primary;
+    position: absolute;
+  }
 
-main:before {
-  top: 39px;
-  height: 90px;
-  clip-path: polygon(24.8% 0, 26.5% 15px, 34% 15px, 35.5% 0, 70% 0);
-  z-index: 10;
+  &:before {
+    top: 39px;
+    height: 90px;
+    clip-path: polygon(24.8% 0, 26.5% 15px, 34% 15px, 35.5% 0, 70% 0);
+    z-index: 10;
+  }
+
+  &:after {
+    top: 0;
+    height: 40px;
+  }
 }
 
 .container {
@@ -31,18 +40,53 @@ main:before {
   gap: 30px;
 }
 
-main:after {
-  top: 0;
-  height: 40px;
+// Светлая тема
+[data-theme="light"] {
+  main {
+    background: $light-background;
+    color: $light-text;
+
+    &:before,
+    &:after {
+      background: $light-accent;
+    }
+  }
+}
+
+// Автоматическая тема
+[data-theme="auto"] {
+  @media (prefers-color-scheme: dark) {
+    main {
+      background: $dark-background;
+      color: $dark-text;
+
+      &:before,
+      &:after {
+        background: $primary;
+      }
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    main {
+      background: $light-background;
+      color: $light-text;
+
+      &:before,
+      &:after {
+        background: $light-accent;
+      }
+    }
+  }
 }
 
 @media (width <= 1080px) {
   main {
     padding-top: 40px;
-  }
 
-  main:before,
-  main:after {
-    display: none;
+    &:before,
+    &:after {
+      display: none;
+    }
   }
 }

@@ -38,12 +38,12 @@
   }
 
   &:before {
-    background: $shadow-primary;
+    background: $primary;
     transform: translate($border, 0);
   }
 
   &:after {
-    background: $primary;
+    background: #ff003c;
   }
 }
 
@@ -54,7 +54,7 @@
   line-height: 1;
   bottom: -5%;
   right: 5%;
-  color: black;
+  color: $primary;
   font-size: 7px;
 }
 
@@ -64,8 +64,8 @@
   left: calc($border * -1);
   right: calc($border * -1);
   bottom: calc($border * -1);
-  background: $shadow-primary;
-  text-shadow: 2px 2px $shadow-primary, -2px -2px $shadow-secondary;
+  background: $primary;
+  text-shadow: 2px 2px $primary, -2px -2px $shadow-secondary;
   clip-path: $clip;
   animation: glitch 2s infinite;
   display: none;
@@ -79,7 +79,7 @@
   bottom: calc($border * 1);
   left: calc($border * 1);
   clip-path: $clip;
-  background: $primary;
+  background: #ff003c;
   z-index: -1;
 }
 
@@ -115,5 +115,74 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
+
+// Светлая тема
+[data-theme="light"] {
+  .menuButton:before {
+    background: $light-accent;
+  }
+
+  .menuButton:after {
+    background: $primary;
+  }
+
+  .tag {
+    color: $light-accent;
+  }
+
+  .glitch {
+    background: $light-accent;
+    text-shadow: 2px 2px $light-accent, -2px -2px $shadow-secondary;
+  }
+
+  .glitch:before {
+    background: $primary;
+  }
+}
+
+// Автоматическая тема
+[data-theme="auto"] {
+  @media (prefers-color-scheme: dark) {
+    .menuButton:before {
+      background: $primary;
+    }
+
+    .menuButton:after {
+      background: #ff003c;
+    }
+
+    .tag {
+      color: $primary;
+    }
+
+    .glitch {
+      background: $primary;
+      text-shadow: 2px 2px $primary, -2px -2px $shadow-secondary;
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    .menuButton:before {
+      background: $light-accent;
+    }
+
+    .menuButton:after {
+      background: $primary;
+    }
+
+    .tag {
+      color: $light-accent;
+    }
+
+    .glitch {
+      background: $light-accent;
+      text-shadow: 2px 2px $light-accent, -2px -2px $shadow-secondary;
+    }
+
+    .glitch:before {
+      background: $primary;
+    }
   }
 }

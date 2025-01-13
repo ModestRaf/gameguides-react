@@ -1,8 +1,11 @@
 import React from 'react';
 import styles from './Header.module.scss';
-import GlitchButton from '../glitchButton/GlitchButton';
+import {useTheme} from "../../ThemeContext";
+import GlitchButton from "../glitchButton/GlitchButton";
 
 const Header: React.FC = () => {
+    const { theme, setTheme } = useTheme();
+
     return (
         <header className={styles.header}>
             <div className={styles.logo}>
@@ -10,9 +13,21 @@ const Header: React.FC = () => {
                 <p className={styles.logoText}>Гудвайбсы и гайды по играм</p>
             </div>
             <div className={styles.color}>
-                <GlitchButton text="Светлая" className={styles.colorLight} />
-                <GlitchButton text="Авто" className={styles.colorAuto} />
-                <GlitchButton text="Темная" className={styles.colorDark} />
+                <GlitchButton
+                    text="Светлая"
+                    className={styles.colorLight}
+                    onClick={() => setTheme('light')} // Устанавливаем светлую тему
+                />
+                <GlitchButton
+                    text="Авто"
+                    className={styles.colorAuto}
+                    onClick={() => setTheme('auto')} // Устанавливаем автоматическую тему
+                />
+                <GlitchButton
+                    text="Темная"
+                    className={styles.colorDark}
+                    onClick={() => setTheme('dark')} // Устанавливаем тёмную тему
+                />
             </div>
         </header>
     );
