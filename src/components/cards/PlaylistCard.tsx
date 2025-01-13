@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './PlaylistsCard.module.scss';
+import styles from './Card.module.scss';
 
 interface PlaylistCardProps {
     title: string;

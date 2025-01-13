@@ -39,3 +39,18 @@ export const cardsData: CardData[] = [
         imageUrl: require("./images/goodvibes/goodvibes-gi.jpg")
     },
 ];
+
+export const guideCardData: CardData[] = [
+    {
+        title: "Mass Effect",
+        imageUrl: require("./images/guides/masseffect.jpg")
+    },
+    {
+        title: "Dragon Age",
+        imageUrl: require("./images/guides/dragonage.jpg")
+    },
+    {
+        title: "Long Dark",
+        imageUrl: require("./images/guides/longdark.jpg")
+    },
+];

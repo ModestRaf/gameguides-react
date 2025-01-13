@@ -1,10 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from "../../styles/index.module.scss";
-import PlaylistCard from '../cards/PlaylistCard';
-import { cardsData } from '../../data';
+import { guideCardData } from '../../data';
+import GuideCard from "../cards/GuideCard";
 
-const Playlists: React.FC = () => {
+const Gamelists: React.FC = () => {
     const navigate = useNavigate();
 
     const handleCardClick = (index: number) => {
@@ -19,8 +19,8 @@ const Playlists: React.FC = () => {
 
     return (
         <div className={styles.container}>
-            {cardsData.map((card, index) => (
-                <PlaylistCard
+            {guideCardData.map((card, index) => (
+                <GuideCard
                     key={index}
                     title={card.title}
                     imageUrl={card.imageUrl}
@@ -31,4 +31,4 @@ const Playlists: React.FC = () => {
     );
 };
 
-export default Playlists;
+export default Gamelists;
