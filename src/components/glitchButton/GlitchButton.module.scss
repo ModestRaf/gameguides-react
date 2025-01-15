@@ -64,7 +64,7 @@
   left: calc($border * -1);
   right: calc($border * -1);
   bottom: calc($border * -1);
-  background: var(--button-color);
+  background: var(--button-tag);
   text-shadow: 2px 2px var(--button-color), -2px -2px $shadow-secondary;
   clip-path: $clip;
   animation: glitch 2s infinite;
