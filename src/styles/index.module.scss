@@ -1,9 +1,8 @@
 @use './variables' as *;
 
-// Стили по умолчанию (тёмная тема)
 main {
-  background: $dark-background;
-  color: $dark-text;
+  background: var(--background);
+  color: var(--text);
   max-width: inherit;
   width: 100%;
   position: relative;
@@ -15,7 +14,7 @@ main {
     display: block;
     left: 0;
     width: 100%;
-    background: $primary;
+    background: var(--accent);
     position: absolute;
   }
 
@@ -38,46 +37,6 @@ main {
   justify-content: center;
   align-items: center;
   gap: 30px;
-}
-
-// Светлая тема
-[data-theme="light"] {
-  main {
-    background: $light-background;
-    color: $light-text;
-
-    &:before,
-    &:after {
-      background: $light-accent;
-    }
-  }
-}
-
-// Автоматическая тема
-[data-theme="auto"] {
-  @media (prefers-color-scheme: dark) {
-    main {
-      background: $dark-background;
-      color: $dark-text;
-
-      &:before,
-      &:after {
-        background: $primary;
-      }
-    }
-  }
-
-  @media (prefers-color-scheme: light) {
-    main {
-      background: $light-background;
-      color: $light-text;
-
-      &:before,
-      &:after {
-        background: $light-accent;
-      }
-    }
-  }
 }
 
 @media (width <= 1080px) {

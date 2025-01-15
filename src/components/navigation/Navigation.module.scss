@@ -3,8 +3,8 @@
 .navigation {
   min-width: inherit;
   width: 100%;
-  background: $primary;
-  border: 2px solid $dark-background;
+  background: var(--nav-color);
+  border: 2px solid black;
   border-left: 0;
   border-right: 0;
   min-height: 60px;
@@ -23,36 +23,5 @@
 @media (width <= 520px) {
   .navigation {
     min-height: 44px;
-  }
-}
-
-// Светлая тема
-[data-theme="light"] {
-  .navigation {
-    background: $light-background;
-    border: 2px solid $dark-background;
-    border-left: 0;
-    border-right: 0;
-  }
-}
-
-// Автоматическая тема
-[data-theme="auto"] {
-  @media (prefers-color-scheme: dark) {
-    .navigation {
-      background: $primary;
-      border: 2px solid $dark-background;
-      border-left: 0;
-      border-right: 0;
-    }
-  }
-
-  @media (prefers-color-scheme: light) {
-    .navigation {
-      background: $light-background;
-      border: 2px solid $dark-background;
-      border-left: 0;
-      border-right: 0;
-    }
   }
 }

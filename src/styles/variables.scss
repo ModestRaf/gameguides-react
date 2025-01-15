@@ -1,18 +1,4 @@
-// Цвета для светлой темы
-$light-background: #f9f002;
-$light-text: #000000;
-$light-accent: #000000;
-$light-card-text: #ffffff;
-
-// Цвета для тёмной темы (по умолчанию)
-$dark-background: #000000;
-$dark-text: #ffffff;
-$dark-accent: #f9f002;
-$dark-card-text: #000000;
-$dark-title: #f9f002;
-
-// Основные переменные
-$primary: #60d5ed;
+//переменные для анимированной кнопки смены темы
 $shadow-secondary: (60, 90%, 60%);
 $clip: polygon(0 0, 100% 0, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 70%);
 $border: 4px;
@@ -22,4 +8,49 @@ $clip-two: polygon(0 78%, 100% 78%, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 1
 $clip-three: polygon(0 44%, 100% 44%, 100% 54%, 95% 54%, 95% 54%, 85% 54%, 85% 54%, 8% 54%, 0 54%);
 $clip-four: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
 $clip-five: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
-$font-button: Disket, Arial, sans-serif;
+
+//переменные для тем
+[data-theme="light"] {
+  --button-color: #60d5ed;
+  --button-accent: #000000;
+  --button-tag: #000000;
+  --background: #f9f002;
+  --text: #000000;
+  --accent: #000000;
+  --nav-color: #f9f002;
+  --card-text: #ffffff;
+}
+
+[data-theme="dark"] {
+  --button-color: #ff003c;
+  --button-accent: #60d5ed;
+  --button-tag: #60d5ed;
+  --background: #000000;
+  --text: #ffffff;
+  --accent: #369AB1;
+  --nav-color: #369AB1;
+  --card-text: #000000;
+}
+
+[data-theme="auto"] {
+  @media (prefers-color-scheme: light) {
+    --button-color: #60d5ed;
+    --button-accent: #000000;
+    --button-tag: #000000;
+    --background: #f9f002;
+    --text: #000000;
+    --accent: #000000;
+    --nav-color: #f9f002;
+    --card-text: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    --button-color: #ff003c;
+    --button-accent: #60d5ed;
+    --button-tag: #60d5ed;
+    --background: #000000;
+    --text: #ffffff;
+    --accent: #369AB1;
+    --nav-color: #369AB1;
+    --card-text: #000000;
+  }
+}

@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './Header.module.scss';
-import {useTheme} from "../../ThemeContext";
+import { useTheme } from "../../ThemeContext";
 import GlitchButton from "../glitchButton/GlitchButton";
 
 const Header: React.FC = () => {
-    const { theme, setTheme } = useTheme();
+    const { setTheme } = useTheme(); // Используем только setTheme
 
     return (
         <header className={styles.header}>
