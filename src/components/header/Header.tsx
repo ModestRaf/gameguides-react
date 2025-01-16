@@ -4,7 +4,7 @@ import { useTheme } from "../../ThemeContext";
 import GlitchButton from "../glitchButton/GlitchButton";
 
 const Header: React.FC = () => {
-    const { setTheme } = useTheme(); // Используем только setTheme
+    const { setTheme } = useTheme();
 
     return (
         <header className={styles.header}>

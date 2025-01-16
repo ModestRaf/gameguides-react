@@ -1,0 +1,25 @@
+.listItem {
+  font-size: 26px;
+  padding: 16px;
+  background-color: var(--background);
+  border: 1px solid var(--accent);
+  transition: background-color 0.4s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: var(--accent);
+    .link {
+      color: var(--text-hover);
+    }
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text);
+  display: block;
+  transition: color 0.4s ease;
+
+  &:hover {
+    color: var(--button-color);
+  }
+}

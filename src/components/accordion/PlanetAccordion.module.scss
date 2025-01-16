@@ -1,0 +1,38 @@
+.accordion {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 28px;
+}
+
+.planet {
+  border: 1px solid var(--accent);
+  overflow: hidden;
+}
+
+.planetHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--background);
+  cursor: pointer;
+
+  span {
+    font-size: 18px;
+  }
+}
+
+.planetContent {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.mapImage {
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
+}

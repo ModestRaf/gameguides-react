@@ -9,6 +9,7 @@ import DragonAge from "../../pages/Guides/DA-guides";
 import LongDark from "../../pages/Guides/LongDark-guides";
 import Genshin from "../../pages/Video/Genshin-video";
 import {ThemeProvider, useTheme} from '../../ThemeContext';
+import MassEffectPlanets from "../../pages/Guides/ME/ME-planets";
 
 const AppWrapper: React.FC = () => {
     return (
@@ -35,6 +36,7 @@ export const App: React.FC = () => {
                 <Route path="/other" element={<OtherVideo />} />
                 <Route path="/genshin" element={<Genshin />} />
                 <Route path="/masseffect" element={<MassEffect />} />
+                <Route path="/masseffect/:id" element={<MassEffectPlanets />} />
                 <Route path="/dragonage" element={<DragonAge />} />
                 <Route path="/longdark" element={<LongDark />} />
             </Routes>

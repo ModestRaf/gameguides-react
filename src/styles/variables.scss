@@ -19,6 +19,7 @@ $clip-five: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
   --accent: #000000;
   --nav-color: #f9f002;
   --card-text: #ffffff;
+  --text-hover: #60d5ed;
 }
 
 [data-theme="dark"] {
@@ -30,6 +31,7 @@ $clip-five: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
   --accent: #369AB1;
   --nav-color: #369AB1;
   --card-text: #000000;
+  --text-hover: #000000;
 }
 
 [data-theme="auto"] {
@@ -42,6 +44,7 @@ $clip-five: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
     --accent: #000000;
     --nav-color: #f9f002;
     --card-text: #ffffff;
+    --text-hover: #60d5ed;
   }
   @media (prefers-color-scheme: dark) {
     --button-color: #ff003c;
@@ -52,5 +55,6 @@ $clip-five: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
     --accent: #369AB1;
     --nav-color: #369AB1;
     --card-text: #000000;
+    --text-hover: #000000;
   }
 }
