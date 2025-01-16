@@ -8,15 +8,22 @@ const Playlists: React.FC = () => {
     const navigate = useNavigate();
 
     const handleCardClick = (index: number) => {
-        if (index === 0) {
-            navigate('/goodvibes');
-        } else if (index === 1) {
-            navigate('/other');
-        } else if (index === 2) {
-            navigate('/genshin');
-        } else {
-            console.warn('Функция для этого плейлиста еще не реализована');
+        let category = '';
+        switch (index) {
+            case 0:
+                category = 'goodvibes';
+                break;
+            case 1:
+                category = 'other';
+                break;
+            case 2:
+                category = 'genshin';
+                break;
+            default:
+                console.warn('Функция для этого плейлиста еще не реализована');
+                return;
         }
+        navigate(`/video/${category}`);
     };
 
     return (

@@ -8,15 +8,22 @@ const Gamelists: React.FC = () => {
     const navigate = useNavigate();
 
     const handleCardClick = (index: number) => {
-        if (index === 0) {
-            navigate('/masseffect');
-        } else if (index === 1) {
-            navigate('/dragonage');
-        } else if (index === 2) {
-            navigate('/longdark');
-        } else {
-            console.warn('Функция для этого списка еще не реализована');
+        let category = '';
+        switch (index) {
+            case 0:
+                category = 'masseffect';
+                break;
+            case 1:
+                category = 'dragonage';
+                break;
+            case 2:
+                category = 'longdark';
+                break;
+            default:
+                console.warn('Функция для этого списка еще не реализована');
+                return;
         }
+        navigate(`/guides/${category}`);
     };
 
     return (

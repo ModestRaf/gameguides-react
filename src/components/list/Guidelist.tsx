@@ -17,7 +17,7 @@ const List: React.FC<ListProps> = ({ items }) => {
         <ul className={styles.list}>
             {items.map((item) => (
                 <ListItem
-                    key={item.id} // id используется только для key
+                    key={item.id}
                     title={item.title}
                     link={item.link}
                 />

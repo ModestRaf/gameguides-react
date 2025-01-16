@@ -79,18 +79,18 @@ export const guideCardData: CardData[] = [
 ];
 
 export const massEffectList = [
-    { id: 1, title: 'Карты планет в ME1', link: '/masseffect/1'  },
-]
+    { id: 1, title: 'Карты планет в ME1', link: '/guides/masseffect/planets' },
+];
 
 export const dragonAgeList = [
-    { id: 1, title: 'Одобрение спутников в Inquisition' },
-    { id: 2, title: 'Одобрение спутников в DA2' },
-    { id: 3, title: 'Одобрение спутников в DAO' },
-]
+    { id: 1, title: 'Одобрение спутников в Inquisition', link: '/guides/dragonage/dai' },
+    { id: 2, title: 'Одобрение спутников в DA2', link: '/guides/dragonage/da2' },
+    { id: 3, title: 'Одобрение спутников в DAO', link: '/guides/dragonage/dao' },
+];
 
 export const longDarkList = [
-    { id: 1, title: 'Карты локаций' },
-]
+    { id: 1, title: 'Карты локаций', link: '/guides/longdark/map' },
+];
 
 export const planetsData = [
     {

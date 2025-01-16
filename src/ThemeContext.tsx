@@ -10,14 +10,41 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    const isBrowser = typeof window !== 'undefined';
+
     const [theme, setTheme] = useState<Theme>(() => {
-        const savedTheme = localStorage.getItem('theme') as Theme | null;
-        return savedTheme || 'auto';
+        try {
+            const savedTheme = isBrowser ? localStorage.getItem('theme') as Theme | null : null;
+            return savedTheme || 'auto';
+        } catch {
+            return 'auto';
+        }
     });
-    // Сохраняем тему в localStorage при её изменении
+
     useEffect(() => {
-        localStorage.setItem('theme', theme);
-    }, [theme]);
+        if (!isBrowser) return;
+
+        const resolvedTheme =
+            theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme;
+        document.documentElement.setAttribute('data-theme', resolvedTheme);
+
+        if (theme === 'auto') {
+            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            const handleChange = () => {
+                const newTheme = mediaQuery.matches ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+            };
+            mediaQuery.addEventListener('change', handleChange);
+
+            return () => mediaQuery.removeEventListener('change', handleChange);
+        }
+    }, [theme, isBrowser]);
+
+    useEffect(() => {
+        if (isBrowser) {
+            localStorage.setItem('theme', theme);
+        }
+    }, [theme, isBrowser]);
 
     return (
         <ThemeContext.Provider value={{ theme, setTheme }}>
@@ -33,3 +60,4 @@ export const useTheme = () => {
     }
     return context;
 };
+
